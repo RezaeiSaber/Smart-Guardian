@@ -1,0 +1,5 @@
+
+{
+  "name": "Smart Guardian - Settings Dashboard",
+  "description": "A web-based dashboard to manage the settings for the Smart Guardian internet protector. This interface allows parents to customize a blacklist of keywords and configure protection settings, all processed and stored locally in the browser."
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Guardian Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="options-page">
+    <!-- 🔰 Header -->
+  <header class="header" style="margin-bottom: 0.5rem; text-align: center; justify-content: center;">
+    <div class="logo-title" style="justify-content: center; align-items: center; gap: 1rem; display: flex; flex-direction: row;">
+        <img src="icons/icon48.png" alt="Smart Guardian" class="logo" />
+        <div>
+        <h1 style="margin: 0;">Smart Guardian</h1>
+        <p class="subtitle" style="margin: 0;">Private. Local. Safe.</p>
+        </div>
+      </div>
+    </header>
+  <div id="unlock-section" class="hidden" style="max-width:400px;margin:0 auto 0 auto;padding:2rem 1.5rem 1.5rem 1.5rem;background:#fff;border-radius:16px;box-shadow:0 2px 12px #3b82f622;text-align:center;">
+    <h2 style="font-size:1.3rem;font-weight:700;color:#2563eb;margin-bottom:1.5rem;"> Enter Password to Access Settings</h2>
+    <input type="password" id="unlock-password-input" placeholder="Enter password..." class="input-field" style="width:90%;margin-bottom:0.5rem;" />
+    <button id="unlock-settings-btn" class="button primary" style="width:90%;font-size:1.1rem;">Confirm</button>
+    <div id="unlock-status-message" class="italic-text small-text" style="margin-top:0.5rem;"></div>
+  </div>
+  <div class="page-wrapper">
+
+    <!--  Main Settings Panel -->
+    <main class="main-settings">
+      <!--  Protection Toggle -->
+      <section class="setting-block">
+        <div class="block-header">
+          <h2>Protection</h2>
+        </div>
+        <div class="setting-row">
+          <span class="label">Content Filtering</span>
+          <label class="switch">
+            <input type="checkbox" id="toggle-enabled">
+            <span class="slider"></span>
+          </label>
+          <span id="toggle-label" class="status">Off</span>
+        </div>
+      </section>
+
+      <!--  Keyword Blacklist -->
+      <section class="setting-block">
+        <div class="block-header">
+          <h2>Blacklist</h2>
+          <p class="description">Customize blocked keywords (e.g. porn, drugs). Everything is saved locally.</p>
+        </div>
+
+        <form id="add-keyword-form" class="keyword-form">
+          <input type="text" id="new-keyword-input" placeholder="Add keyword..." />
+          <button type="submit">+</button>
+        </form>
+
+        <div id="keywords-list" class="keywords-list"></div>
+        <p id="no-keywords-message" class="placeholder hidden">Your blacklist is empty.</p>
+      </section>
+
+      <!-- 🌐 Blocked Domains -->
+      <section class="setting-block">
+        <div class="block-header">
+          <h2>Blocked Sites</h2>
+          <p class="description">Block entire websites by domain (e.g. pornhub.com). Everything is saved locally.</p>
+        </div>
+        <form id="add-domain-form" class="keyword-form">
+          <input type="text" id="new-domain-input" placeholder="Add domain..." />
+          <button type="submit">+</button>
+        </form>
+        <div id="domains-list" class="keywords-list"></div>
+        <p id="no-domains-message" class="placeholder hidden">Your blocked sites list is empty.</p>
+      </section>
+
+    </main>
+    <!--  Password Settings -->
+    <section id="password-settings-section" class="card setting-block password-control" style="margin-top: 2rem; flex-direction: column; align-items: stretch;">
+      <h2 class="card-title"> Password Settings</h2>
+      <div id="set-password-section">
+        <input type="password" id="password-input" placeholder="Enter password..." class="input-field" />
+        <button id="set-password-btn" class="button danger">Confirm</button>
+        <div id="password-status-message" class="italic-text small-text" style="margin-top:0.5rem;"></div>
+        </div>
+      <div id="change-password-section" class="hidden">
+        <input type="password" id="old-password" placeholder="Current password..." class="input-field" style="margin-bottom:0.5rem;" />
+        <input type="password" id="new-password" placeholder="New password..." class="input-field" style="margin-bottom:0.5rem;" />
+        <button id="change-password-btn" class="button">Change Password</button>
+        <div id="change-password-status" class="italic-text small-text" style="margin-top:0.5rem;"></div>
+        </div>
+      </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Made with ❤️ for families — All rights reserved by Saber Rezaei.</p>
+    </footer>
+
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>
